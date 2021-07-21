@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digitalroot.Valheim.BetterClubs", "Digitalroot.Valheim.BetterClubs\Digitalroot.Valheim.BetterClubs.csproj", "{E4E3C5D6-4A5A-407B-8776-B4171F23F1C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9FE1905B-3ABE-478A-B3FE-003829130EDB}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{4DB445B6-7EF4-4B9A-8D4B-75BC3D16B73E}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\release-drafter.yml = ..\.github\release-drafter.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{B5463D38-F4E4-44BB-877A-0465C4B96D87}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\drafter.yml = ..\.github\workflows\drafter.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4E3C5D6-4A5A-407B-8776-B4171F23F1C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4E3C5D6-4A5A-407B-8776-B4171F23F1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4E3C5D6-4A5A-407B-8776-B4171F23F1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4E3C5D6-4A5A-407B-8776-B4171F23F1C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DB445B6-7EF4-4B9A-8D4B-75BC3D16B73E} = {9FE1905B-3ABE-478A-B3FE-003829130EDB}
+		{B5463D38-F4E4-44BB-877A-0465C4B96D87} = {4DB445B6-7EF4-4B9A-8D4B-75BC3D16B73E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C2EB867-EEA9-4BC9-ACA9-E13F47C7BD87}
+	EndGlobalSection
+EndGlobal
