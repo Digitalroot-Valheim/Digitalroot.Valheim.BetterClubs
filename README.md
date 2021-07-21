@@ -1,3 +1,5 @@
+[![Release Drafter](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.BetterClubs/actions/workflows/drafter.yml/badge.svg)](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.BetterClubs/actions/workflows/drafter.yml)
+
 # Digitalroot Valheim Mods
 Mods for Valheim using BepInEx and Harmony
 
