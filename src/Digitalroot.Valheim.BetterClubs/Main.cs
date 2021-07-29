@@ -10,7 +10,7 @@ namespace Digitalroot.Valheim.BetterClubs
   [BepInPlugin(Guid, Name, Version)]
   public class Main : BaseUnityPlugin
   {
-    public const string Version = "1.0.1";
+    public const string Version = "1.0.2";
     public const string Name = "Digitalroot Better Clubs";
     public const string Guid = "digitalroot.mods.betterclubs";
     public const string Namespace = "Digitalroot.Valheim.BetterClubs";
