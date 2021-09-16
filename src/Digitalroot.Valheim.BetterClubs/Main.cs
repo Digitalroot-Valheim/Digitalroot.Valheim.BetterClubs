@@ -1,6 +1,5 @@
 ﻿using BepInEx;
 using JetBrains.Annotations;
-using Jotunn.Configs;
 using Jotunn.Entities;
 using Jotunn.Managers;
 using Jotunn.Utils;
@@ -13,7 +12,7 @@ namespace Digitalroot.Valheim.BetterClubs
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
   public class Main : BaseUnityPlugin
   {
-    public const string Version = "1.1.0";
+    public const string Version = "1.1.1";
     public const string Name = "Digitalroot Better Clubs";
     public const string Guid = "digitalroot.mods.betterclubs";
     public const string Namespace = "Digitalroot.Valheim.BetterClubs";
