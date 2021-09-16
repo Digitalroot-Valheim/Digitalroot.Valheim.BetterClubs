@@ -16,7 +16,7 @@ New Clubs:
 - Fire Starter
 - Spiked Club
 - Spikier Club
-- ?Stinging Club
+- Stinging Club
 - Sickly Sticky
 - Heavy Club
 
