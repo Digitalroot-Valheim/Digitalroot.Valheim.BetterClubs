@@ -3,14 +3,17 @@ using JetBrains.Annotations;
 using Jotunn.Configs;
 using Jotunn.Entities;
 using Jotunn.Managers;
+using Jotunn.Utils;
 using UnityEngine;
 
 namespace Digitalroot.Valheim.BetterClubs
 {
   [BepInPlugin(Guid, Name, Version)]
+  [BepInDependency(Jotunn.Main.ModGuid, "2.3.0")]
+  [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
   public class Main : BaseUnityPlugin
   {
-    public const string Version = "1.0.3";
+    public const string Version = "1.1.0";
     public const string Name = "Digitalroot Better Clubs";
     public const string Guid = "digitalroot.mods.betterclubs";
     public const string Namespace = "Digitalroot.Valheim.BetterClubs";
@@ -18,7 +21,7 @@ namespace Digitalroot.Valheim.BetterClubs
     [UsedImplicitly]
     public void Awake()
     {
-      AddLocalizations();
+      //AddLocalizations();
       PrefabManager.OnVanillaPrefabsAvailable += AddClonedItems;
     }
 
@@ -35,27 +38,27 @@ namespace Digitalroot.Valheim.BetterClubs
       PrefabManager.OnVanillaPrefabsAvailable -= AddClonedItems;
     }
 
-    private void AddLocalizations()
-    {
-      LocalizationManager.Instance.AddLocalization(new LocalizationConfig("English")
-      {
-        Translations =
-        {
-          {"item_club_bronze_nail", "Spiked Club"}, {"item_club_bronze_nail_description", "A club with a nail in it."},
-          {"item_club_iron_nail", "Spikier Club"}, {"item_club_iron_nail_description", "A club with a sharp nail in it."},
-          {"item_club_fire", "Fire Starter"}, {"item_club_fire_description", "A large matchstick."},
-          {"item_club_stone", "Heavy Club"}, {"item_club_stone_description", "A club with weight behind it."},
-          {"item_club_bee", "Stinging Club"}, {"item_club_bee_description", "A club that stings."},
-          {"item_club_poison", "Sickly Sticky"}, {"item_club_poison_description", "A club that's diseased."},
-        }
-      });
-    }
+    //private void AddLocalizations()
+    //{
+    //  LocalizationManager.Instance.AddLocalization(new LocalizationConfig("English")
+    //  {
+    //    Translations =
+    //    {
+    //      {"item_club_bronze_nail", "Spiked Club"}, {"item_club_bronze_nail_description", "A club with a nail in it."},
+    //      {"item_club_iron_nail", "Spikier Club"}, {"item_club_iron_nail_description", "A club with a sharp nail in it."},
+    //      {"item_club_fire", "Fire Starter"}, {"item_club_fire_description", "A large matchstick."},
+    //      {"item_club_stone", "Heavy Club"}, {"item_club_stone_description", "A club with weight behind it."},
+    //      {"item_club_bee", "Stinging Club"}, {"item_club_bee_description", "A club that stings."},
+    //      {"item_club_poison", "Sickly Sticky"}, {"item_club_poison_description", "A club that's diseased."},
+    //    }
+    //  });
+    //}
 
     #region ClubBronzeNail
 
     private void ClubBronzeNail()
     {
-      CustomItem customItem = new("ClubBronzeNail", "Club");
+      CustomItem customItem = new("ClubBronzeNail", Common.Names.ItemDropNames.Club);
       ItemManager.Instance.AddItem(customItem);
 
       var itemDrop = customItem.ItemDrop;
@@ -75,18 +78,18 @@ namespace Digitalroot.Valheim.BetterClubs
       Recipe recipe = ScriptableObject.CreateInstance<Recipe>();
       recipe.name = "Recipe_ClubBronzeNail";
       recipe.m_item = itemDrop;
-      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>("piece_workbench");
+      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>(Common.Names.CraftingStationNames.Workbench);
       recipe.m_resources = new[]
       {
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Club"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Club),
           m_amount = 1,
           m_amountPerLevel = 0
         },
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("BronzeNails"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.BronzeNails),
           m_amount = 1,
           m_amountPerLevel = 1
         }
@@ -103,7 +106,7 @@ namespace Digitalroot.Valheim.BetterClubs
 
     private void ClubIronNail()
     {
-      CustomItem customItem = new("ClubIronNail", "Club");
+      CustomItem customItem = new("ClubIronNail", Common.Names.ItemDropNames.Club);
       ItemManager.Instance.AddItem(customItem);
 
       var itemDrop = customItem.ItemDrop;
@@ -123,18 +126,18 @@ namespace Digitalroot.Valheim.BetterClubs
       Recipe recipe = ScriptableObject.CreateInstance<Recipe>();
       recipe.name = "Recipe_ClubIronNail";
       recipe.m_item = itemDrop;
-      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>("piece_workbench");
+      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>(Common.Names.CraftingStationNames.Workbench);
       recipe.m_resources = new[]
       {
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Club"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Club),
           m_amount = 1,
           m_amountPerLevel = 0
         },
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("IronNails"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.IronNails),
           m_amount = 1,
           m_amountPerLevel = 1
         }
@@ -151,7 +154,7 @@ namespace Digitalroot.Valheim.BetterClubs
 
     private void ClubFire()
     {
-      CustomItem customItem = new("ClubFire", "Club");
+      CustomItem customItem = new("ClubFire", Common.Names.ItemDropNames.Club);
       ItemManager.Instance.AddItem(customItem);
 
       var itemDrop = customItem.ItemDrop;
@@ -171,24 +174,24 @@ namespace Digitalroot.Valheim.BetterClubs
       Recipe recipe = ScriptableObject.CreateInstance<Recipe>();
       recipe.name = "Recipe_ClubFire";
       recipe.m_item = itemDrop;
-      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>("piece_workbench");
+      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>(Common.Names.CraftingStationNames.Workbench);
       recipe.m_resources = new[]
       {
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Club"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Club),
           m_amount = 1,
           m_amountPerLevel = 0
         },
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Resin"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Resin),
           m_amount = 2,
           m_amountPerLevel = 2
         },
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Flint"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Flint),
           m_amount = 1,
           m_amountPerLevel = 1
         }
@@ -205,7 +208,7 @@ namespace Digitalroot.Valheim.BetterClubs
 
     private void ClubStone()
     {
-      CustomItem customItem = new("ClubStone", "Club");
+      CustomItem customItem = new("ClubStone", Common.Names.ItemDropNames.Club);
       ItemManager.Instance.AddItem(customItem);
 
       var itemDrop = customItem.ItemDrop;
@@ -227,18 +230,18 @@ namespace Digitalroot.Valheim.BetterClubs
       Recipe recipe = ScriptableObject.CreateInstance<Recipe>();
       recipe.name = "Recipe_ClubStone";
       recipe.m_item = itemDrop;
-      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>("piece_workbench");
+      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>(Common.Names.CraftingStationNames.Workbench);
       recipe.m_resources = new[]
       {
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Club"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Club),
           m_amount = 1,
           m_amountPerLevel = 0
         },
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Stone"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Stone),
           m_amount = 4,
           m_amountPerLevel = 4
         },
@@ -255,7 +258,7 @@ namespace Digitalroot.Valheim.BetterClubs
 
     private void ClubBee()
     {
-      CustomItem customItem = new("ClubBee", "Club");
+      CustomItem customItem = new("ClubBee", Common.Names.ItemDropNames.Club);
       ItemManager.Instance.AddItem(customItem);
 
       var itemDrop = customItem.ItemDrop;
@@ -275,18 +278,18 @@ namespace Digitalroot.Valheim.BetterClubs
       Recipe recipe = ScriptableObject.CreateInstance<Recipe>();
       recipe.name = "Recipe_ClubBee";
       recipe.m_item = itemDrop;
-      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>("piece_workbench");
+      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>(Common.Names.CraftingStationNames.Workbench);
       recipe.m_resources = new[]
       {
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Club"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Club),
           m_amount = 1,
           m_amountPerLevel = 0
         },
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("QueenBee"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.QueenBee),
           m_amount = 1,
           m_amountPerLevel = 200
         }
@@ -303,7 +306,7 @@ namespace Digitalroot.Valheim.BetterClubs
 
     private void ClubPoison()
     {
-      CustomItem customItem = new("ClubPoison", "Club");
+      CustomItem customItem = new("ClubPoison", Common.Names.ItemDropNames.Club);
       ItemManager.Instance.AddItem(customItem);
 
       var itemDrop = customItem.ItemDrop;
@@ -323,18 +326,18 @@ namespace Digitalroot.Valheim.BetterClubs
       Recipe recipe = ScriptableObject.CreateInstance<Recipe>();
       recipe.name = "Recipe_ClubPoison";
       recipe.m_item = itemDrop;
-      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>("piece_workbench");
+      recipe.m_craftingStation = PrefabManager.Cache.GetPrefab<CraftingStation>(Common.Names.CraftingStationNames.Workbench);
       recipe.m_resources = new[]
       {
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Club"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Club),
           m_amount = 1,
           m_amountPerLevel = 0
         },
         new Piece.Requirement
         {
-          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>("Guck"),
+          m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.ItemDropNames.Guck),
           m_amount = 1,
           m_amountPerLevel = 3
         }
