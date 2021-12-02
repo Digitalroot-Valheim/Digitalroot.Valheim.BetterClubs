@@ -25,6 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B3DB987C-A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digitalroot.Valheim.BetterClubs", "Digitalroot.Valheim.BetterClubs\Digitalroot.Valheim.BetterClubs.csproj", "{8E86C474-5672-47C2-8BC3-C61D6B1F97FC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{53641C09-C499-4BB9-B9FE-C2F468996A17}"
+	ProjectSection(SolutionItems) = preProject
+		..\.config\dotnet-tools.json = ..\.config\dotnet-tools.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +48,7 @@ Global
 		{4DB445B6-7EF4-4B9A-8D4B-75BC3D16B73E} = {9FE1905B-3ABE-478A-B3FE-003829130EDB}
 		{B5463D38-F4E4-44BB-877A-0465C4B96D87} = {4DB445B6-7EF4-4B9A-8D4B-75BC3D16B73E}
 		{B3DB987C-AB91-4D8E-A0AD-F389E3493F41} = {9FE1905B-3ABE-478A-B3FE-003829130EDB}
+		{53641C09-C499-4BB9-B9FE-C2F468996A17} = {9FE1905B-3ABE-478A-B3FE-003829130EDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C2EB867-EEA9-4BC9-ACA9-E13F47C7BD87}
