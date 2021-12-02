@@ -12,7 +12,7 @@ namespace Digitalroot.Valheim.BetterClubs
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
   public class Main : BaseUnityPlugin
   {
-    public const string Version = "1.1.4";
+    public const string Version = "1.1.3";
     public const string Name = "Digitalroot Better Clubs";
     public const string Guid = "digitalroot.mods.betterclubs";
     public const string Namespace = "Digitalroot.Valheim.BetterClubs";
@@ -20,6 +20,7 @@ namespace Digitalroot.Valheim.BetterClubs
     [UsedImplicitly]
     public void Awake()
     {
+      //AddLocalizations();
       PrefabManager.OnVanillaPrefabsAvailable += AddClonedItems;
     }
 
