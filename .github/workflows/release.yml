@@ -24,7 +24,6 @@ jobs:
     with:
       sln-file-name: Digitalroot.Valheim.BetterClubs
       proj-file-name: Digitalroot.Valheim.BetterClubs
-      skip-unit-tests: true
       is-nuget-package: false
       nexus-enable-upload: false
       nexus-mod-id: 1288
