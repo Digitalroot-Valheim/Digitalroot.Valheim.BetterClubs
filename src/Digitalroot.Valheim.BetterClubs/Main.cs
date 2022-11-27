@@ -8,11 +8,11 @@ using UnityEngine;
 namespace Digitalroot.Valheim.BetterClubs
 {
   [BepInPlugin(Guid, Name, Version)]
-  [BepInDependency(Jotunn.Main.ModGuid, "2.4.1")]
+  [BepInDependency(Jotunn.Main.ModGuid, "2.9.0")]
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
   public class Main : BaseUnityPlugin
   {
-    public const string Version = "1.1.4";
+    public const string Version = "1.1.5";
     public const string Name = "Digitalroot Better Clubs";
     public const string Guid = "digitalroot.mods.betterclubs";
     public const string Namespace = "Digitalroot.Valheim.BetterClubs";
