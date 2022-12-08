@@ -48,7 +48,7 @@
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="Digitalroot.Valheim.Build.Targets" Version="1.0.12">
+    <PackageReference Include="Digitalroot.Valheim.Build.Targets" Version="1.0.14">
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
