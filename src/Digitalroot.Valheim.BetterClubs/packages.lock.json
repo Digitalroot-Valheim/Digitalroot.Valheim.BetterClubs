@@ -14,9 +14,9 @@
       },
       "Digitalroot.Valheim.Build.Targets": {
         "type": "Direct",
-        "requested": "[1.0.20, )",
-        "resolved": "1.0.20",
-        "contentHash": "jifIYKKk6q8smXJwoHJk9GhLJ5Wh/wNY9L2JPBdn6IPkpAAQLuKiMvg5O4Ya0+B1A2PV9/ifxjiQK4inf4QwTQ=="
+        "requested": "[1.0.21, )",
+        "resolved": "1.0.21",
+        "contentHash": "8mErk3UFjy80d9IlTjXNsofT7YfKLz897YE10ieB/SHNbBorzwVCPYRGsmuaNH8HyqjKQH3KnK4gDwDMBEC+DQ=="
       },
       "Digitalroot.Valheim.Common.Names": {
         "type": "Direct",
@@ -52,6 +52,15 @@
         "contentHash": "VCWQM8q7wZwHMgksBsFfbImRUmlgn7E6EKkrnUV86/keqBvMTjhlA7mBYtz6Dace8XsJYufYJvRP25uur5W5WA==",
         "dependencies": {
           "Fody": "6.3.0"
+        }
+      },
+      "Microsoft.NETFramework.ReferenceAssemblies": {
+        "type": "Direct",
+        "requested": "[1.0.2, )",
+        "resolved": "1.0.2",
+        "contentHash": "5/cSEVld+px/CuRrbohO/djfg6++eR6zGpy88MgqloXvkj//WXWpFZyu/OpkXPN0u5m+dN/EVwLNYFUxD4h2+A==",
+        "dependencies": {
+          "Microsoft.NETFramework.ReferenceAssemblies.net462": "1.0.2"
         }
       },
       "BepInEx.BaseLib": {
@@ -96,6 +105,11 @@
         "dependencies": {
           "MonoMod.RuntimeDetour": "21.12.13.1"
         }
+      },
+      "Microsoft.NETFramework.ReferenceAssemblies.net462": {
+        "type": "Transitive",
+        "resolved": "1.0.2",
+        "contentHash": "vnWMOt5+4SLOLu5hlB54LMK5OHqsX+5ekbo6vb7USvCM5uA4UKtATuMvIAw69ak62F94c+3895XwF5TcjjzpVw=="
       },
       "Mono.Cecil": {
         "type": "Transitive",
