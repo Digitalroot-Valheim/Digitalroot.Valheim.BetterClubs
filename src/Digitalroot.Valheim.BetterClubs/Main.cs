@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Digitalroot.Valheim.BetterClubs
 {
   [BepInPlugin(Guid, Name, Version)]
-  [BepInDependency(Jotunn.Main.ModGuid, "2.9.0")]
+  [BepInDependency(Jotunn.Main.ModGuid, "2.10.0")]
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
   public partial class Main : BaseUnityPlugin
   {

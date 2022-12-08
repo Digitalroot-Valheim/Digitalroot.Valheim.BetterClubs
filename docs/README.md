@@ -1,7 +1,4 @@
-[![Release](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.BetterClubs/actions/workflows/release.yml/badge.svg)](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.BetterClubs/actions/workflows/release.yml)
-
-# Digitalroot Valheim Mods
-Mods for Valheim using BepInEx and Harmony
+# Better Clubs
 
 ## License
 Closed-source license is available for commercial use.
