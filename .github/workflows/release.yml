@@ -30,10 +30,11 @@ jobs:
     with:
       sln-file-name: Digitalroot.Valheim.BetterClubs
       proj-file-name: Digitalroot.Valheim.BetterClubs
+      create-github-release: false
       is-nuget-package: false
-      nexus-enable-upload: true
+      nexus-enable-upload: false
       nexus-mod-id: 1288
-      ts-enable-upload: true
+      ts-enable-upload: false
       ts-name: Better_Clubs
       ts-description: "Add new upgrades for the Club weapon."
       ts-categories: Server-side Client-side Tweaks
