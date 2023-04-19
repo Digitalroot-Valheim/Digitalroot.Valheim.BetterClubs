@@ -34,7 +34,7 @@ jobs:
       is-nuget-package: false
       nexus-enable-upload: false
       nexus-mod-id: 1288
-      ts-enable-upload: false
+      ts-enable-upload: true
       ts-name: Better_Clubs
       ts-description: "Add new upgrades for the Club weapon."
       ts-categories: Server-side Client-side Tweaks
