@@ -1,34 +1,71 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
+using Digitalroot.Valheim.Common;
 using JetBrains.Annotations;
 using Jotunn.Entities;
 using Jotunn.Managers;
 using Jotunn.Utils;
+using System;
+using System.Reflection;
 using UnityEngine;
 
 namespace Digitalroot.Valheim.BetterClubs
 {
   [BepInPlugin(Guid, Name, Version)]
-  [BepInDependency(Jotunn.Main.ModGuid, "2.10.0")]
+  [BepInDependency(Jotunn.Main.ModGuid)]
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
-  public partial class Main : BaseUnityPlugin
+  public partial class Main : BaseUnityPlugin, ITraceableLogging
   {
+    [UsedImplicitly] public static Main Instance;
+    [UsedImplicitly] public static ConfigEntry<int> NexusId;
+
+    public Main()
+    {
+      Instance = this;
+      #if DEBUG
+      EnableTrace = true;
+      #else
+      EnableTrace = false;
+      #endif
+      NexusId = Config.Bind("General", "NexusID", 2301, new ConfigDescription("Nexus mod ID for updates", null, new ConfigurationManagerAttributes { Browsable = false, ReadOnly = true }));
+      Log.RegisterSource(Instance);
+      Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+    }
+
+
     [UsedImplicitly]
     public void Awake()
     {
-      PrefabManager.OnVanillaPrefabsAvailable += AddClonedItems;
+      try
+      {
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+        PrefabManager.OnVanillaPrefabsAvailable += AddClonedItems;
+      }
+      catch (Exception e)
+      {
+        Log.Error(Instance, e);
+      }
     }
 
     private void AddClonedItems()
     {
-      ClubBronzeNail();
-      ClubIronNail();
-      ClubFire();
-      ClubStone();
-      ClubBee();
-      ClubPoison();
+      try
+      {
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+        ClubBronzeNail();
+        ClubIronNail();
+        ClubFire();
+        ClubStone();
+        ClubBee();
+        ClubPoison();
 
-      // You want that to run only once, Jotunn has the item cached for the game session
-      PrefabManager.OnVanillaPrefabsAvailable -= AddClonedItems;
+        // You want that to run only once, Jotunn has the item cached for the game session
+        PrefabManager.OnVanillaPrefabsAvailable -= AddClonedItems;
+      }
+      catch (Exception e)
+      {
+        Log.Error(Instance, e);
+      }
     }
 
     #region ClubBronzeNail
@@ -324,6 +361,16 @@ namespace Digitalroot.Valheim.BetterClubs
       CustomRecipe customRecipe = new(recipe, fixReference: false, fixRequirementReferences: false);
       ItemManager.Instance.AddRecipe(customRecipe);
     }
+
+    #endregion
+
+    #region Implementation of ITraceableLogging
+
+    /// <inheritdoc />
+    public string Source => Namespace;
+
+    /// <inheritdoc />
+    public bool EnableTrace { get; private set; }
 
     #endregion
   }
