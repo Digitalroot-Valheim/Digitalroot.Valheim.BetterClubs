@@ -52,7 +52,8 @@
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="Digitalroot.Valheim.Common.Names" Version="1.4.15" />
+    <PackageReference Include="Digitalroot.Valheim.Common.ModReferences" Version="1.0.0" />
+    <PackageReference Include="Digitalroot.Valheim.Common.Names" Version="1.4.16" />
     <PackageReference Include="Digitalroot.Valheim.Common.References" Version="0.217.4">
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
