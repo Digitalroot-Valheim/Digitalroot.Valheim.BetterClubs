@@ -37,4 +37,4 @@ jobs:
       ts-name: Better_Clubs
       ts-description: "Add new upgrades for the Club weapon."
       ts-categories: Server-side Client-side Tweaks
-      ts-dependencies: denikson-BepInExPack_Valheim@5.4.2105 ValheimModding-Jotunn@2.11.5
+      ts-dependencies: denikson-BepInExPack_Valheim@5.4.2105 ValheimModding-Jotunn@2.12.7
