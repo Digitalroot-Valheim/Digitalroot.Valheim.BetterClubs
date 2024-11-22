@@ -20,11 +20,11 @@
       },
       "Digitalroot.Valheim.Common.Names": {
         "type": "Direct",
-        "requested": "[1.4.41, )",
-        "resolved": "1.4.41",
-        "contentHash": "PRXE9AzytoxA9xy555KFAESQngTzkVZd1gPsxjxu46ntXH52D2yxt/3oGBKfa3FzE9AJCRZtMqN+gMeGlTzwqQ==",
+        "requested": "[1.4.42, )",
+        "resolved": "1.4.42",
+        "contentHash": "FKLWyLQbMK2HukZjLutiu3Y+MR7Z4A+zoQvHXLEa6k0y+Jj9BetiQRBjmKRqDNjTdstlvCgh87oagLaW2IlMSg==",
         "dependencies": {
-          "Digitalroot.Valheim.Common.Utils": "1.0.66"
+          "Digitalroot.Valheim.Common.Utils": "1.0.67"
         }
       },
       "Digitalroot.Valheim.Common.References": {
@@ -98,8 +98,8 @@
       },
       "Digitalroot.Valheim.Common.Utils": {
         "type": "Transitive",
-        "resolved": "1.0.66",
-        "contentHash": "4pfuVJQkQaY6IaYM9p5/ZxImUZH1qsh5DMUPGBZ+VyAM+npcWKyXzeFYTZEZt3FWvdo0N+MWNAFcvmj/bO+I4w==",
+        "resolved": "1.0.67",
+        "contentHash": "JN+Elx1uSnnMOIDUAehH6ip/uI99LBrVmhbicvbtvZTDjd4+8TzLH2L2L5tW8gXFqpEISInADC9nuGm6ZtAzTg==",
         "dependencies": {
           "Digitalroot.Valheim.Common.Log": "1.1.55"
         }
